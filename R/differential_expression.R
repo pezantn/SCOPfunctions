@@ -299,7 +299,7 @@ DE_MAST_RE_seurat = function(
     message("Compute likelihoods and p-values")
   }
   # call a likelihood ratio test on the fitted object
-  expr = quote(MAST::summary(object = zlmCond, doLRT = 'groupGroup1'))
+  expr = quote(MAST::summary(object = zlmCond, doLRT = TRUE))
   summaryCond <- if (verbose) eval(expr) else suppressWarnings(suppressMessages(eval(expr)))
 
   if ("character" %in% class(summaryCond)) stop("No differentially genes detected")
